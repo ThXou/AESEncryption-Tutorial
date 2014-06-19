@@ -14,7 +14,7 @@
 		E99C33F019537E3500840CA4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E99C33EE19537E3500840CA4 /* InfoPlist.strings */; };
 		E99C33F219537E3500840CA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E99C33F119537E3500840CA4 /* main.m */; };
 		E99C33F619537E3500840CA4 /* THXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E99C33F519537E3500840CA4 /* THXAppDelegate.m */; };
-		E99C33F919537E3500840CA4 /* AES_Encryption_Tutorial.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E99C33F719537E3500840CA4 /* AES_Encryption_Tutorial.xcdatamodeld */; };
+		E99C33F919537E3500840CA4 /* model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E99C33F719537E3500840CA4 /* model.xcdatamodeld */; };
 		E99C33FB19537E3500840CA4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E99C33FA19537E3500840CA4 /* Images.xcassets */; };
 		E99C340219537E3500840CA4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99C340119537E3500840CA4 /* XCTest.framework */; };
 		E99C340319537E3500840CA4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99C33E319537E3500840CA4 /* Foundation.framework */; };
@@ -46,7 +46,7 @@
 		E99C33F319537E3500840CA4 /* AES Encryption Tutorial-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AES Encryption Tutorial-Prefix.pch"; sourceTree = "<group>"; };
 		E99C33F419537E3500840CA4 /* THXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THXAppDelegate.h; sourceTree = "<group>"; };
 		E99C33F519537E3500840CA4 /* THXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THXAppDelegate.m; sourceTree = "<group>"; };
-		E99C33F819537E3500840CA4 /* AES_Encryption_Tutorial.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AES_Encryption_Tutorial.xcdatamodel; sourceTree = "<group>"; };
+		E99C33F819537E3500840CA4 /* model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = model.xcdatamodel; sourceTree = "<group>"; };
 		E99C33FA19537E3500840CA4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E99C340019537E3500840CA4 /* AES Encryption TutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AES Encryption TutorialTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E99C340119537E3500840CA4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -118,7 +118,7 @@
 				E99C33F419537E3500840CA4 /* THXAppDelegate.h */,
 				E99C33F519537E3500840CA4 /* THXAppDelegate.m */,
 				E99C33FA19537E3500840CA4 /* Images.xcassets */,
-				E99C33F719537E3500840CA4 /* AES_Encryption_Tutorial.xcdatamodeld */,
+				E99C33F719537E3500840CA4 /* model.xcdatamodeld */,
 				E99C33EC19537E3500840CA4 /* Supporting Files */,
 			);
 			path = "AES Encryption Tutorial";
@@ -249,7 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E99C33F919537E3500840CA4 /* AES_Encryption_Tutorial.xcdatamodeld in Sources */,
+				E99C33F919537E3500840CA4 /* model.xcdatamodeld in Sources */,
 				E99C33F219537E3500840CA4 /* main.m in Sources */,
 				E99C33F619537E3500840CA4 /* THXAppDelegate.m in Sources */,
 			);
@@ -460,13 +460,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		E99C33F719537E3500840CA4 /* AES_Encryption_Tutorial.xcdatamodeld */ = {
+		E99C33F719537E3500840CA4 /* model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				E99C33F819537E3500840CA4 /* AES_Encryption_Tutorial.xcdatamodel */,
+				E99C33F819537E3500840CA4 /* model.xcdatamodel */,
 			);
-			currentVersion = E99C33F819537E3500840CA4 /* AES_Encryption_Tutorial.xcdatamodel */;
-			path = AES_Encryption_Tutorial.xcdatamodeld;
+			currentVersion = E99C33F819537E3500840CA4 /* model.xcdatamodel */;
+			path = model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
