@@ -7,6 +7,13 @@
 //
 
 #import "THXAppDelegate.h"
+#import "NSData+AES256.h"
+#import "User.h"
+
+
+// la clave que usaremos para la encriptación
+#define kEncryptionKey @"8gdUOnr42F"
+
 
 @implementation THXAppDelegate
 
@@ -17,6 +24,38 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    // procedemos a encriptar el texto e imprimir el resultado
+    
+    NSString *textToEncrypt = @"contraseñasupersecreta";
+    NSData *textData = [textToEncrypt dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *encryptedData = [textData AES256EncryptWithKey:kEncryptionKey];
+    NSString *base64EncryptedPassword = [encryptedData base64EncodedStringWithOptions:0];
+    NSLog(@"Contraseña Encriptada: %@", base64EncryptedPassword);
+    
+    
+    // creamos el objeto modelo y lo guardamos
+    
+    User *user = [NSEntityDescription insertNewObjectForEntityForName:@"User"
+                                               inManagedObjectContext:self.managedObjectContext];
+    user.username = @"ThXou";
+    user.password = base64EncryptedPassword;
+    [self saveContext];
+    
+    
+    // ahora recuperamos el objeto que guardamos antes
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"User"];
+    NSArray *users = [self.managedObjectContext executeFetchRequest:request error:nil];
+    
+    
+    // desencriptamos el texto guardado y lo mostramos en pantalla
+    
+    User *encryptedUser = users[0];
+    NSData *decodedData = [[NSData alloc] initWithBase64EncodedString:encryptedUser.password options:0];
+    NSData *decryptedData = [decodedData AES256DecryptWithKey:kEncryptionKey];
+    NSString *decryptedString = [[NSString alloc] initWithData:decryptedData encoding:NSUTF8StringEncoding];
+    NSLog(@"Contraseña Desencriptada: %@", decryptedString);
     
     
     return YES;
@@ -58,7 +97,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"model" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"AES_Encryption_Tutorial" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }
