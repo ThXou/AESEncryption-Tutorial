@@ -1,8 +1,8 @@
 //
 //  NSData+AES256.h
-//  M3u8 Player
+//  AES Encryption Tutorial
 //
-//  Created by ThXou on 08/06/14.
+//  Created by ThXou on 20/06/14.
 //  Copyright (c) 2014 ThXou. All rights reserved.
 //
 
